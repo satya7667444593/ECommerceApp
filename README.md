@@ -14,7 +14,7 @@ A modern, full-featured e-commerce Android application built with Jetpack Compos
   - Session management
 
 - **Product Management**
-  - Upload products with multiple images (minimum 3)
+  - Upload products with multiple images (minimum 3) "due to some charges of firebase i cant use storage"
   - View all products in a scrollable list
   - Search products by title, description, or category
   - Filter products by category
