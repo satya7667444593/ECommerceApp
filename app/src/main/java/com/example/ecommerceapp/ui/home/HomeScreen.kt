@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.ui.home
 
+import android.util.Log
 import com.example.ecommerceapp.ui.components.ProductCard
 import com.example.ecommerceapp.ui.components.EmptyState
 import com.example.ecommerceapp.ui.components.ProductCard
@@ -156,7 +157,9 @@ fun HomeScreen(
                         items(products) { product ->
                             ProductCard(
                                 product = product,
-                                onClick = { onNavigateToProductDetail(product.id) }
+                                onClick = {
+                                    Log.d("HomeScreen", "Product clicked: ${product.id}")
+                                    onNavigateToProductDetail(product.id) }
                             )
                         }
                     }

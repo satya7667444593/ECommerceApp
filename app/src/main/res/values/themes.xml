@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-        <style name="ECommerceApp" parent="android:Theme.Material">
 
+    <style name="Theme.ECommerceApp" parent="android:Theme.Material">
             <item name="android:statusBarColor">@color/purple_700</item>
         </style>
 

@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
 
-        <style name="Theme.ECommerceApp" parent="android:Theme.Material">
-
+    <style name="Theme.ECommerceApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+<!--    <style name="Theme.ECommerceApp" parent="android:Theme.Material">-->
             <item name="android:statusBarColor">@color/purple_200</item>
         </style>
 

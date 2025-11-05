@@ -2,12 +2,14 @@ package com.example.ecommerceapp.data.remote.firebase
 
 
 import android.net.Uri
+import android.util.Log
 import com.example.ecommerceapp.data.remote.model.Product
 import com.example.ecommerceapp.util.Constants
 import com.example.ecommerceapp.util.Resource
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.storageMetadata
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
@@ -41,20 +43,47 @@ class FirebaseProductManager @Inject constructor(
         }
     }
 
-    private suspend fun uploadImages(productId: String, uris: List<Uri>): List<String> {
-        val imageUrls = mutableListOf<String>()
+//    private suspend fun uploadImages(productId: String, uris: List<Uri>): List<String> {
+//        val imageUrls = mutableListOf<String>()
+//
+//        uris.forEachIndexed { index, uri ->
+//            val ref = storage.reference
+//                .child("${Constants.STORAGE_PATH_PRODUCTS}/$productId/image_$index.jpg")
+//
+//            ref.putFile(uri).await()
+//            val downloadUrl = ref.downloadUrl.await()
+//            imageUrls.add(downloadUrl.toString())
+//        }
+//
+//        return imageUrls
+//    }
+private suspend fun uploadImages(productId: String, uris: List<Uri>): List<String> {
+    val imageUrls = mutableListOf<String>()
 
+    try {
         uris.forEachIndexed { index, uri ->
             val ref = storage.reference
-                .child("${Constants.STORAGE_PATH_PRODUCTS}/$productId/image_$index.jpg")
+                .child("product_images/$productId/image_$index.jpg")
 
-            ref.putFile(uri).await()
+            // Upload with metadata
+            val metadata = storageMetadata {
+                contentType = "image/jpeg"
+            }
+
+            // Upload file
+            ref.putFile(uri, metadata).await()
+
+            // Get download URL
             val downloadUrl = ref.downloadUrl.await()
             imageUrls.add(downloadUrl.toString())
         }
-
-        return imageUrls
+    } catch (e: Exception) {
+        Log.e("FirebaseProductManager", "Upload error: ${e.message}")
+        throw e
     }
+
+    return imageUrls
+}
 
     fun getAllProducts(): Flow<Resource<List<Product>>> = callbackFlow {
         trySend(Resource.Loading())

@@ -5,8 +5,8 @@ plugins {
      id("com.android.application")
     kotlin("android")
     id("org.jetbrains.kotlin.plugin.compose") version "2.1.21"
-    kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    kotlin("kapt")
     id("com.google.gms.google-services")
 
 }
@@ -79,6 +79,7 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation(libs.androidx.appcompat)
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
@@ -122,6 +123,7 @@ dependencies {
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
 
+    implementation("com.google.android.material:material:1.11.0")
 
 }
 kapt {
