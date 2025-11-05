@@ -1,7 +1,9 @@
 package com.example.ecommerceapp.ui.home
 
-import com.example.ecommerce.ui.components.ProductCard
-import com.example.ecommerce.ui.components.EmptyState
+import com.example.ecommerceapp.ui.components.ProductCard
+import com.example.ecommerceapp.ui.components.EmptyState
+import com.example.ecommerceapp.ui.components.ProductCard
+import com.example.ecommerceapp.ui.components.EmptyState
 
 
 import androidx.compose.foundation.background
@@ -28,7 +30,7 @@ import coil.compose.AsyncImage
 import com.example.ecommerceapp.data.remote.model.Product
 import com.example.ecommerceapp.data.remote.model.RecommendedProduct
 import com.example.ecommerceapp.util.Resource
-
+import com.example.ecommerceapp.ui.theme.ECommerceAppTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(

@@ -17,20 +17,21 @@ object DatabaseModule {
 
     @Provides
     @Singleton
+    @JvmStatic
     fun provideAppDatabase(
         @ApplicationContext context: Context
     ): AppDatabase {
         return Room.databaseBuilder(
-            context,
+            context.applicationContext,
             AppDatabase::class.java,
-            "ecommerce_database"
+            "ecommerceapp_database"
         )
-            .fallbackToDestructiveMigration()
             .build()
     }
 
     @Provides
     @Singleton
+    @JvmStatic
     fun provideFavoriteProductDao(database: AppDatabase): FavoriteProductDao {
         return database.favoriteProductDao()
     }
