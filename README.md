@@ -521,9 +521,9 @@ SOFTWARE.
 If you have any questions or issues:
 
 1. Check the [Troubleshooting](#-troubleshooting) section
-2. Search [existing issues](https://github.com/yourusername/ecommerce-android/issues)
-3. Create a [new issue](https://github.com/yourusername/ecommerce-android/issues/new)
-4. Email: your.email@example.com
+2. Search [existing issues](https://github.com/satya7667444593/ecommerce-android/issues)
+3. Create a [new issue](https://github.com/satya7667444593/ecommerce-android/issues/new)
+4. Email:satya766744@gmail.com
 
 ---
 
@@ -531,7 +531,7 @@ If you have any questions or issues:
 
 If you find this project useful, please consider giving it a star! ⭐
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/ecommerce-android&type=Date)](https://star-history.com/#yourusername/ecommerce-android&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=satya7667444593/ecommerce-android&type=Date)](https://star-history.com/#satya7667444593/ecommerce-android&Date)
 
 ---
 
